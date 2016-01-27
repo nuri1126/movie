@@ -1,0 +1,2 @@
+-r commin.txt
+django-debug-toolbar

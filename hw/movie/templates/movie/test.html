@@ -1,0 +1,19 @@
+"우리 페이지는 1-1 이런 식으로 진행해 나가고, 2페이지는 2-1 이런 식으로 진행해 나가게 만들자."
+{% extends 'movie/base.html' %}
+
+<body>
+{% block content %}
+
+<html>
+
+<div class="container">
+  <table class="table table-hover">
+
+          {% for place in places %}
+      <table>{{place.name}}</table>
+    {% endfor %}
+  </table>
+</div>
+{% endblock content %}
+</body>
+</html>

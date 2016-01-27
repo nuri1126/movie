@@ -1,0 +1,102 @@
+{% extends 'movie/base.html' %}
+<body>
+{% block content %}
+<h3 style="color:#616161">Date</h3>
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3">
+          <a class="active" href="#test1">
+            <script language="JavaScript">
+
+                  <!--날짜가져오는함수-->
+                      var today = new Date();
+                      var dd = today.getDate();
+                      var mm = today.getMonth()+1;
+                      var yyyy = today.getFullYear();
+
+                      if(dd<10) {
+                          dd='0'+dd
+                      }
+
+                      if(mm<10) {
+                          mm='0'+mm
+                      }
+
+                      today = mm+'/'+dd+'/'+yyyy;
+                      document.write(today);</script>
+          </a>
+        </li>
+
+        <li class="tab col s3"><a href="#test2">
+            <script language="JavaScript">
+
+                  <!--날짜가져오는함수-->
+                      var today = new Date();
+                      var dd = today.getDate()+1;
+                      var mm = today.getMonth()+1;
+                      var yyyy = today.getFullYear();
+
+                      if(dd<10) {
+                          dd='0'+dd
+                      }
+
+                      if(mm<10) {
+                          mm='0'+mm
+                      }
+
+                      today = mm+'/'+dd+'/'+yyyy;
+                      document.write(today);</script>
+
+        </a></li>
+        <li class="tab col s3"><a href="#test3">
+            <script language="JavaScript">
+
+                  <!--날짜가져오는함수-->
+                      var today = new Date();
+                      var dd = today.getDate()+2;
+                      var mm = today.getMonth()+1;
+                      var yyyy = today.getFullYear();
+
+                      if(dd<10) {
+                          dd='0'+dd
+                      }
+
+                      if(mm<10) {
+                          mm='0'+mm
+                      }
+
+                      today = mm+'/'+dd+'/'+yyyy;
+                      document.write(today);</script>
+
+        </a></li>
+        <li class="tab col s3"><a href="#test4">
+            <script language="JavaScript">
+
+                  <!--날짜가져오는함수-->
+                      var today = new Date();
+                      var dd = today.getDate()+3;
+                      var mm = today.getMonth()+1;
+                      var yyyy = today.getFullYear();
+
+                      if(dd<10) {
+                          dd='0'+dd
+                      }
+
+                      if(mm<10) {
+                          mm='0'+mm
+                      }
+
+                      today = mm+'/'+dd+'/'+yyyy;
+                      document.write(today);</script>
+
+        </a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+{% endblock content %}
+</body>
+</html>

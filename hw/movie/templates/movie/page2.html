@@ -1,0 +1,49 @@
+{% extends 'movie/base.html' %}
+
+<body>
+{% block content %}
+
+      <h3 style="color:#616161">Theater</h3>
+      <div>
+        <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal"> 1번. </button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal"> 2번. </button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal"> 3번. </button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal"> 추가</button>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+            극장선택창
+        </h4>
+      </div>
+      <div class="modal-body">
+        </div>
+<div class="container">
+  <table class="table table-hover">
+
+    {% for place in places %}
+      <table>{{place.name}}</table>
+    {% endfor %}
+  </table>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">다른 영화관</button>
+        <button type="button" class="btn btn-primary">닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock content %}
+</body>
+</html>
