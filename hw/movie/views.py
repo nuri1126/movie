@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Place, Movie
+from .models import Place, Movie, Date
 
 # Create your views here.
 #def index(request):
@@ -9,7 +9,8 @@ def index2(request):
     return render(request, 'movie/index2.html')
 
 def page1(request):
-	return render(request,'movie/page1.html')
+    dates = Date.objects.all
+    return render(request,'movie/page1.html',{"dates":dates})
 
 def page2(request):
     places = Place.objects.all
