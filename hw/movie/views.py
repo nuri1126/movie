@@ -5,22 +5,22 @@ from .models import Place, Movie, Date
 #def index(request):
     #return render(request, 'movie/index.html')
 
-def index2(request):
-    return render(request, 'movie/index2.html')
+def page2index(request):
+    return render(request, 'movie/page2-index.html')
 
-def page1(request):
+def page21(request):
     dates = Date.objects.all
-    return render(request,'movie/page1.html',{"dates":dates})
+    return render(request,'movie/page2-1.html',{"dates":dates})
 
-def page2(request):
+def page22(request):
     places = Place.objects.all
-    return render(request,'movie/page2.html',{"places":places})
+    return render(request,'movie/page2-2.html',{"places":places})
 
-def page3(request):
-	return render(request,'movie/page3.html')
+def page23(request):
+	return render(request,'movie/page2-3.html')
 
-def page4(request):
-    return render(request,'movie/page4.html')
+def page24(request):
+    return render(request,'movie/page2-4.html')
 
 def index(request):
     movies = Movie.objects.all()

@@ -20,8 +20,9 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', 'movie.views.index'),
     url(r'^index.html/$', 'movie.views.index'),
-    url(r'^page1.html/$', 'movie.views.page1'),
-    url(r'^page2.html/$', 'movie.views.page2'),
-    url(r'^page3.html/$', 'movie.views.page3'),
-    url(r'^page4.html/$', 'movie.views.page4'),
+    url(r'^page2-index.html/page2-1.html/$', 'movie.views.page21'),
+    url(r'^page2-index.html/page2-2.html/$', 'movie.views.page22'),
+    url(r'^page2-index.html/page2-3.html/$', 'movie.views.page23'),
+    url(r'^page2-index.html/page2-4.html/$', 'movie.views.page24'),
+    url(r'^page2-index.html/$', 'movie.views.page2index'),
     ]
