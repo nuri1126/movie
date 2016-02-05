@@ -24,5 +24,6 @@ def page24(request):
 
 def index(request):
     movies = Movie.objects.all()
+    movies = Movie.objects.order_by('title')
     params = {'movies': movies}
     return render(request, 'movie/index.html', params)
