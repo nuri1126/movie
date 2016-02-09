@@ -6,15 +6,39 @@
     <div class="col s12">
       <ul class="tabs">
     <!--이거 오늘 기준으로 네개만-->
-    {% for date in dates %}
-        <li class="tab col s3">
+ <li class="tab col s3">
           <a class="active" href="#test1">
 
-    {{date.day}}
+    {{today|date:"m월  d 일" }}
 
           </a>
         </li>
-            {% endfor %}
+
+
+ <li class="tab col s3">
+          <a class="active" href="#test1">
+
+    {{tomorrow|date:"m월  d 일" }}
+
+          </a>
+        </li>
+ <li class="tab col s3">
+          <a class="active" href="#test1">
+
+    {{twodays|date:"m월  d 일" }}
+
+          </a>
+        </li>
+  <li class="tab col s3">
+          <a class="active" href="#test1">
+
+    {{threedays|date:"m월  d 일" }}
+
+          </a>
+        </li>
+
+
+
       </ul>
     </div>
 

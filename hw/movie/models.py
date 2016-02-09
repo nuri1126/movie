@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Place(models.Model):
     name=models.CharField(max_length=100,verbose_name='이름',help_text='help_text!')
     movie=models.ManyToManyField('Movie',through='Key')

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Place, Movie, Date
-
+import datetime
 # Create your views here.
 #def index(request):
     #return render(request, 'movie/index.html')
@@ -9,8 +9,11 @@ def page2index(request):
     return render(request, 'movie/page2-index.html')
 
 def page21(request):
-    dates = Date.objects.all
-    return render(request,'movie/page2-1.html',{"dates":dates})
+    today = datetime.date.today()
+    tomorrow= today + datetime.timedelta(days=1)
+    twodays= today + datetime.timedelta(days=2)
+    threedays = today + datetime.timedelta(days=3)
+    return render(request,'movie/page2-1.html',{"today":today, "tomorrow":tomorrow, "twodays":twodays,"threedays":threedays })
 
 def page22(request):
     places = Place.objects.all
