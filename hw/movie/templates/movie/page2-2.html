@@ -27,10 +27,20 @@
         </div>
 <div class="container">
   <table class="table table-hover">
+      {% for place in places %}
+  <form action="#">
 
-    {% for place in places %}
-      <table>{{place.name}}</table>
-    {% endfor %}
+    <p>
+
+      <input type="checkbox" class="filled-in" id="{{place.id}}" />
+
+      <label for="{{place.id}}">            {{place.name}}   </label>
+
+    </p>
+
+
+    </form>
+           {% endfor %}
   </table>
 </div>
       </div>
