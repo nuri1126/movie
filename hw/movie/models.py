@@ -11,9 +11,11 @@ class Place(models.Model):
 
 class Movie(models.Model):
     title=models.CharField(max_length=100)
+    #place=models.CharField(max_length=100)
     date=models.ManyToManyField('Date',through='Key')
+
     def __str__(self):
-        return self.title
+        return self.title #+ self.place
 
 class Date(models.Model):
     day=models.CharField(max_length=100)

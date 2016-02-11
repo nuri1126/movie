@@ -29,13 +29,9 @@
   <form action="#">
 
     <p>
-
       <input type="checkbox" class="filled-in" id="{{place.id}}" value="{{place.name}}" />
-
-      <label for="{{place.id}}">            {{place.name}}   </label>
-
+      <label for="{{place.id}}">{{place.name}}</label>
     </p>
-
 
     </form>
            {% endfor %}
@@ -51,11 +47,12 @@
 </div>
   <script type="text/javascript">
   $('#save_value').click(function() {
-      var sel = $('input[type=checkbox]:checked').map(function(_, el) {
+      var sel = $('input[type=checkbox]:checked').each(function(_, el) {
           return $(el).val();
       }).get();
-
+    
     document.getElementById("demo").innerHTML = sel;
+
 })
 
 </script>
