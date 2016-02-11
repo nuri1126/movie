@@ -5,10 +5,8 @@
 
       <h3 style="color:#616161">Theater</h3>
       <div>
-        <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal"> 1번. </button>
-        <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal"> 2번. </button>
-        <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal"> 3번. </button>
-        <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal"> 추가</button>
+
+        <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal"id="demo"> 추가</button>
 
 
 
@@ -32,7 +30,7 @@
 
     <p>
 
-      <input type="checkbox" class="filled-in" id="{{place.id}}" />
+      <input type="checkbox" class="filled-in" id="{{place.id}}" value="{{place.name}}" />
 
       <label for="{{place.id}}">            {{place.name}}   </label>
 
@@ -45,12 +43,22 @@
 </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">다른 영화관</button>
-        <button type="button" class="btn btn-primary">닫기</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="save_value">다른 영화관</button>
+
       </div>
     </div>
   </div>
 </div>
+  <script type="text/javascript">
+  $('#save_value').click(function() {
+      var sel = $('input[type=checkbox]:checked').map(function(_, el) {
+          return $(el).val();
+      }).get();
+
+    document.getElementById("demo").innerHTML = sel;
+})
+
+</script>
 
 
 
