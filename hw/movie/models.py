@@ -11,7 +11,7 @@ class Place(models.Model):
 
 class Movie(models.Model):
     title=models.CharField(max_length=100)
-    #place=models.CharField(max_length=100)
+    poster=models.ImageField(blank = True)
     date=models.ManyToManyField('Date',through='Key')
 
     def __str__(self):

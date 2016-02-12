@@ -13,8 +13,11 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
+from django.conf import settings
 from django.conf.urls import include, url
+from django.conf.urls.static import static
 from django.contrib import admin
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,3 +29,5 @@ urlpatterns = [
     url(r'^index2.html/page2-3.html/$', 'movie.views.page23'),
     url(r'^index2.html/page2-4.html/$', 'movie.views.page24'),
     ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -39,7 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'movie',
     'bootstrap3',
-  
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -108,4 +108,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'hw', 'static'),
 ]
-print(os.path.join(BASE_DIR, 'hw', 'static'))
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
