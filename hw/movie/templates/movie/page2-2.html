@@ -47,10 +47,10 @@
 </div>
   <script type="text/javascript">
   $('#save_value').click(function() {
-      var sel = $('input[type=checkbox]:checked').each(function(_, el) {
+      var sel = $('input[type=checkbox]:checked').map(function(_, el) {
           return $(el).val();
       }).get();
-    
+
     document.getElementById("demo").innerHTML = sel;
 
 })

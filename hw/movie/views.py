@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from .models import Place, Movie, Date
+from .models import Place, Movie, Date, Key
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.db.models import Q
 import datetime
 # Create your views here.
 #def index(request):
@@ -20,7 +22,16 @@ def page22(request):
     return render(request,'movie/page2-2.html',{"places":places})
 
 def page23(request):
-	return render(request,'movie/page2-3.html')
+    filtered_list = Key.objects.all()
+    query_filtered= request.GET.get('filtered')
+    if query_filtered:
+        filtered_list=filtered_list.filter(
+            Q(movie__title__icontains=query_filtered)|
+            Q(place__name__icontains=query_filtered)).distinct()
+    else:
+        pass
+
+    return render(request,'movie/page2-3.html',{'filtered_list':filtered_list})
 
 def page24(request):
     return render(request,'movie/page2-4.html')
