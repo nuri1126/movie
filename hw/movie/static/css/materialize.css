@@ -2583,11 +2583,11 @@ th {
 html {
   box-sizing: border-box;
 }
-
+/* 박스 맞출려고
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
+*/
 ul {
   list-style-type: none;
 }

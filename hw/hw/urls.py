@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', 'movie.views.index'),
@@ -25,4 +26,5 @@ urlpatterns = [
     url(r'^index2.html/page2-2.html/$', 'movie.views.page22'),
     url(r'^index2.html/page2-3.html/$', 'movie.views.page23', name='page23'),
     url(r'^index2.html/page2-4.html/$', 'movie.views.page24'),
-    ]
+
+    ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

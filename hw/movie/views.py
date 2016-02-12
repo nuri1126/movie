@@ -34,9 +34,11 @@ def page23(request):
     return render(request,'movie/page2-3.html',{'filtered_list':filtered_list})
 
 def page24(request):
+    selected_values = request.GET.getlist('test')
     return render(request,'movie/page2-4.html')
 
 def index(request):
+
     movies = Movie.objects.all()
     movies = Movie.objects.order_by('title')
     params = {'movies': movies}

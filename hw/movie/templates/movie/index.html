@@ -63,13 +63,13 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="{% static 'img_1/portfolio/roundicons.png' %}" class="img-responsive" alt="">
+                        <img src="media/{{ movie.poster }}" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <form action="#">
-      <input type="checkbox" class="filled-in" id="{{ movie.id }}" value="{{ movie.title }}" />
+      <input type="checkbox" name="test" class="filled-in" id="{{ movie.id }}1" value="{{ movie.title }}" />
 
-      <label for="{{ movie.id }}"> <h4> {{ movie.title }} </h4> </label>
+      <label for="{{ movie.id }}1"> <h4> {{ movie.title }} </h4> </label>
 
                           </form>
                     </div>
@@ -115,9 +115,9 @@
             <div class="row">
               {% for movie in movies %}
                 <div class="col-lg-4 col-sm-4">
-                    <a href="#" class="portfolio-box">
+                    <a href="#" class="portfolio-link">
 
-                        <img src="{% static "img/portfolio/rbnt.jpg" %}" class="img-responsive" alt="">
+                        <img src="media/{{ movie.poster }}" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -146,6 +146,9 @@
               {% endfor %}
             </div>
         </div>
+    <form action="/index2-html">
+    <input type="submit" value="제출" />
+    </form>
     </section>
 
     <section id="contact">
@@ -154,7 +157,7 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Movie O'Clock!</h2>
                     <hr class="primary">
-                    <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+
                 </div>
                 <div class="col-lg-4 col-lg-offset-2 text-center">
                     <i class="fa fa-phone fa-3x wow bounceIn"></i>
